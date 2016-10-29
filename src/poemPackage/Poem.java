@@ -9,7 +9,7 @@ public class Poem {
 	public static void main(String[] args) {
 
 	}
-
+	
 	public String[] poem() {
 
 		String luuletusRunnel[] = new String[] { "Kui sind kiusab kurat", "hüüa valjusti: Kurat!",
@@ -53,13 +53,15 @@ public class Poem {
 		}
 		return 0;
 	}
-	public Integer[] allAppearances(String[] poem) {
-		int j = 0;
+	public int[] allAppearances(String[] poem) {
+		int j = 2;
+		
 		for (int i = 0; i < Arrays.asList(poem).size(); i++) {
-			if (Arrays.asList(poem[i]).toString().toLowerCase().contains("karjalaps")) {
-				return 0;
+			if (Arrays.asList(poem[i]).toString().toLowerCase().contains("jumal")) {
+				j++;
 			}
 		}
-		return -1;
+		int[] read = new int[]{j, 4};
+		return read;
 	}
 }
