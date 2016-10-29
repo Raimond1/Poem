@@ -12,7 +12,7 @@ public class PoemTest {
 
 		String luuletusRunnel[] = new String[] { "Kui sind kiusab kurat", "hüüa valjusti: Kurat!",
 				"Kui sind jälgib jumal, ", "ütle julgesti: Jumal!", "ära häbene sõpru, ", "ära vaenlasi varja, ",
-				"lahke meelega mine", "äike karjalaps karja." };
+				"lahke meelega mine", "väike karjalaps karja." };
 		poem.hasWord(poem.poem());
 		assertThat(poem.hasWord(luuletusRunnel), is(true));
 	}
@@ -22,7 +22,26 @@ public class PoemTest {
 
 		String luuletusRunnel[] = new String[] { "Kui sind kiusab kurat", "hüüa valjusti: Kurat!",
 				"Kui sind jälgib jumal, ", "ütle julgesti: Jumal!", "ära häbene sõpru, ", 
-				"ära vaenlasi varja, ", "lahke meelega mine", "äike karjalaps karja." };
+				"ära vaenlasi varja, ", "lahke meelega mine", "väike karjalaps karja." };
 		assertThat(poem.countWord(luuletusRunnel), is(2));
 	}
+	@Test
+	public void firstAppearance(){
+		Poem poem = new Poem();
+
+		String luuletusRunnel[] = new String[] { "Kui sind kiusab kurat", "hüüa valjusti: Kurat!",
+				"Kui sind jälgib jumal, ", "ütle julgesti: Jumal!", "ära häbene sõpru, ", 
+				"ära vaenlasi varja, ", "lahke meelega mine", "väike karjalaps karja." };
+		assertThat(poem.firstAppear(luuletusRunnel), is(8));
+		
+	}
+	@Test
+	public void allAppearance(){
+		Poem poem = new Poem();
+
+		String luuletusRunnel[] = new String[] { "Kui sind kiusab kurat", "hüüa valjusti: Kurat!",
+				"Kui sind jälgib jumal, ", "ütle julgesti: Jumal!", "ära häbene sõpru, ", 
+				"ära vaenlasi varja, ", "lahke meelega mine", "väike karjalaps karja." };
+		assertThat(poem.allAppearances(luuletusRunnel), is([3,4]));
+		
 }
